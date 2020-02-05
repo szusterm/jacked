@@ -1,4 +1,5 @@
-import {Currency, ProductScrapRecipe} from './ProductScrapper';
+import {ProductScrapRecipe} from './ProductScrapper/ProductScrapRecipe';
+import {Currency} from './ProductScrapper/Currency';
 
 export const shopRecipes: ProductScrapRecipe[] = [
     {

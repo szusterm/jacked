@@ -1,19 +1,6 @@
-import {JQueryInit} from './JQuery';
-
-export type ProductFieldReturn<T> = ($: JQueryInit) => T;
-
-export interface ProductScrapRecipe {
-    site: string;
-    name: ProductFieldReturn<string>;
-    image: ProductFieldReturn<string>;
-    price: ProductFieldReturn<number>;
-    currency: ProductFieldReturn<Currency>;
-}
-
-export enum Currency {
-    USD = 'usd',
-    PLN = 'pln'
-}
+import {ProductScrapRecipe} from './ProductScrapRecipe';
+import {JQueryInit} from '../JQuery';
+import {Currency} from './Currency';
 
 export class ProductScrapper {
     private _cachedName: string;
