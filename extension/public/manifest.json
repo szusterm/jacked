@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Jacked",
+  "version": "0.0.1",
+  "description": "Following price changes of wanted items",
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["dist/content.js"]
+    }
+  ]
+}
