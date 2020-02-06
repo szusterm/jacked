@@ -10,14 +10,19 @@ export const shopRecipes: ProductScrapRecipe[] = [
         image: $ => {
             const src = $('.zoomImg').attr('src');
 
-            return src.replace('//', '');
+            if (src) {
+                return src.replace('//', '');
+            }
         },
 
         price: $ => {
-            const textPrice = $('.product-single__title').text();
-            const fixedPrice = textPrice.replace('$', '');
+            const textPrice = $('.product-price').text();
 
-            return parseFloat(fixedPrice);
+            if (textPrice) {
+                const fixedPrice = textPrice.replace('$', '');
+
+                return parseFloat(fixedPrice);
+            }
         },
 
         currency: () => Currency.USD
@@ -31,18 +36,22 @@ export const shopRecipes: ProductScrapRecipe[] = [
         image: $ => {
             const src = $('.ng-star-inserted').attr('src');
 
-            return src.replace('//', '');
+            if (src) {
+                return src.replace('//', '');
+            }
         },
 
         price: $ => {
             const textPrice = $('.price span').at(0).text();
 
-            const fixedPrice = textPrice
-                .trim()
-                .replace(',', '.')
-                .replace(' pln', '');
+            if (textPrice) {
+                const fixedPrice = textPrice
+                    .trim()
+                    .replace(',', '.')
+                    .replace(' pln', '');
 
-            return parseFloat(fixedPrice);
+                return parseFloat(fixedPrice);
+            }
         },
 
         currency: () => Currency.PLN

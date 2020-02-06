@@ -46,4 +46,12 @@ export class ProductScrapper {
         return this._cachedCurrency;
     }
 
+    get isValid() {
+        return (
+            this.name &&
+            this.image &&
+            this.price !== undefined &&
+            this.currency
+        );
+    }
 }
