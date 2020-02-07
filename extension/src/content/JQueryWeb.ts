@@ -1,4 +1,4 @@
-import {JQuery, JQueryInit} from '../../../shared/JQuery';
+import {JQuery, JQueryInit} from '../../../shared/scrapper';
 
 const $: JQueryInit = selector => {
     const element = new JQueryWeb();
@@ -8,17 +8,14 @@ const $: JQueryInit = selector => {
 };
 
 class JQueryWeb implements JQuery {
-    private _elements: NodeListOf<Element>;
-
     constructor(
-         elements?: NodeListOf<Element>,
+        private _elements: Element[] = [],
         private _elementId: number = 0
     ) {
-        this._elements = elements;
     }
 
     load(selector: string) {
-        this._elements = document.querySelectorAll(selector);
+        this._elements = Array.from(document.querySelectorAll(selector));
     }
 
     at(index: number) {

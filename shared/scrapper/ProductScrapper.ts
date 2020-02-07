@@ -1,5 +1,5 @@
-import {ProductScrapRecipe} from './ProductScrapRecipe';
-import {JQueryInit} from '../JQuery';
+import {ProductScrapRecipe} from './types/ProductScrapRecipe';
+import {JQueryInit} from './types/JQuery';
 import {Currency} from './Currency';
 
 export class ProductScrapper {
@@ -15,7 +15,7 @@ export class ProductScrapper {
     }
 
     get name() {
-        if (!this._cachedName) {
+        if (!this._cachedName && this._recipe) {
             this._cachedName = this._recipe.name(this._jQuery);
         }
 
@@ -23,7 +23,7 @@ export class ProductScrapper {
     }
 
     get image() {
-        if (!this._cachedImage) {
+        if (!this._cachedImage && this._recipe) {
             this._cachedImage = this._recipe.image(this._jQuery);
         }
 
@@ -31,7 +31,7 @@ export class ProductScrapper {
     }
 
     get price() {
-        if (!this._cachedPrice) {
+        if (!this._cachedPrice && this._recipe) {
             this._cachedPrice = this._recipe.price(this._jQuery);
         }
 
@@ -39,7 +39,7 @@ export class ProductScrapper {
     }
 
     get currency() {
-        if (!this._cachedCurrency) {
+        if (!this._cachedCurrency && this._recipe) {
             this._cachedCurrency = this._recipe.currency(this._jQuery);
         }
 

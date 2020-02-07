@@ -1,9 +1,8 @@
-import {ProductScrapRecipe} from './ProductScrapper/ProductScrapRecipe';
-import {Currency} from './ProductScrapper/Currency';
+import {ProductScrapRecipe, Currency} from './scrapper';
 
 export const shopRecipes: ProductScrapRecipe[] = [
     {
-        site: 'pornhubapparel.com',
+        site: 'https://www.pornhubapparel.com',
 
         name: $ => $('.product-single__title').text(),
 
@@ -29,12 +28,12 @@ export const shopRecipes: ProductScrapRecipe[] = [
     },
 
     {
-        site: 'bigstar.pl',
+        site: 'https://bigstar.pl',
 
-        name: $ => $('.product-name .sel-product-name').text(),
+        name: $ => $('.sel-product-name').text(),
 
         image: $ => {
-            const src = $('.ng-star-inserted').attr('src');
+            const src = $('.image-section figure img').attr('src');
 
             if (src) {
                 return src.replace('//', '');
@@ -49,6 +48,35 @@ export const shopRecipes: ProductScrapRecipe[] = [
                     .trim()
                     .replace(',', '.')
                     .replace(' pln', '');
+
+                return parseFloat(fixedPrice);
+            }
+        },
+
+        currency: () => Currency.PLN
+    },
+
+    {
+        site: 'https://store.steampowered.com',
+
+        name: $ => $('.apphub_AppName').text(),
+
+        image: $ => {
+            const src = $('.game_header_image_full').attr('src');
+
+            if (src) {
+                return src;
+            }
+        },
+
+        price: $ => {
+            const textPrice = $('.game_purchase_price').text();
+
+            if (textPrice) {
+                const fixedPrice = textPrice
+                    .trim()
+                    .replace(',', '.')
+                    .replace('zł', '');
 
                 return parseFloat(fixedPrice);
             }

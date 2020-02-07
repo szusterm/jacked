@@ -1,16 +1,23 @@
-import {ProductScrapper} from '../../../shared/ProductScrapper/ProductScrapper';
+import ProductScrapper, {findRecipe} from '../../../shared/scrapper';
 import {shopRecipes} from '../../../shared/shopRecipes';
 import $ from './JQueryWeb';
 
-window.addEventListener('load', () => {
-    const scrapper = new ProductScrapper(shopRecipes[0], $);
+const logProduct = (scrapper: ProductScrapper) => {
+    console.log(`name: ${scrapper.name}`);
+    console.log(`image: ${scrapper.image}`);
+    console.log(`price: ${scrapper.price} ${scrapper.currency}`);
+};
 
-    if (scrapper.isValid) {
-        console.log(`name: ${scrapper.name}`);
-        console.log(`image: ${scrapper.image}`);
-        console.log(`price: ${scrapper.price} ${scrapper.currency}`);
-    }
-    else {
-        console.log('It\'s not a product page');
-    }
+const scrapProduct = () => {
+    const recipe = findRecipe(location.href, shopRecipes);
+
+    const scrapper = new ProductScrapper(recipe, $);
+
+    logProduct(scrapper);
+};
+
+window.addEventListener('load', () => {
+    const TIME_DELAY = 5000;
+
+    setTimeout(scrapProduct, TIME_DELAY);
 }, false);

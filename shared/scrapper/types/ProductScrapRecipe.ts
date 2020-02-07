@@ -1,5 +1,5 @@
-import {JQueryInit} from '../JQuery';
-import {Currency} from './Currency';
+import {JQueryInit} from './JQuery';
+import {Currency} from '../Currency';
 
 export interface ProductScrapRecipe {
     site: string;
