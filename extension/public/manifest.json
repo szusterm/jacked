@@ -11,12 +11,11 @@
   "content_scripts": [
     {
       "matches": ["https://*/*"],
-      "js": ["dist/content.js"]
+      "js": ["dist/popup.js"]
     }
   ],
   "browser_action": {
-    "default_title": "Jacked",
-    "default_popup": "popup.html"
+    "default_title": "Jacked"
   },
 
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"

@@ -52,8 +52,16 @@
     "eofline": true,
     "newline-before-return": true,
     "no-irregular-whitespace": true,
-    "semicolon": [true, "always", "ignore-bound-class-methods"],
-    "max-line-length": [true, 150],
+    "semicolon": [
+      true,
+      "always",
+      "ignore-bound-class-methods"
+    ],
+    "max-line-length": [
+      true,
+      150
+    ],
+    "no-shadowed-variable": false,
     "whitespace": [
       false,
       "check-branch",

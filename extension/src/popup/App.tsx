@@ -1,14 +1,14 @@
+import FloatingBox from './components/FloatingBox';
 import {Currency} from '../../../shared/scrapper';
 import ProductInfo from './pages/ProductInfo';
-import styled from 'styled-components';
-import React from 'react';
+import React, {useState} from 'react';
 
-interface Props {
-    className?: string;
-}
+function App() {
+    const [isHidden, setIsHidden] = useState(true);
 
-function App({className}: Props) {
-    const PRODUCT = {
+    const switchIsHidden = () => setIsHidden(isHidden => !isHidden);
+
+    const EXAMPLE_PRODUCT = {
         name: 'Sweet T-shirt',
         image: 'cdn.shopify.com/s/files/1/0877/4244/products/sports_bra_front_classic_Store_photo_1024x1024.png?v=1554859388',
         price: 40,
@@ -16,15 +16,13 @@ function App({className}: Props) {
     };
 
     return (
-        <div className={className}>
-            <ProductInfo {...PRODUCT}/>
-        </div>
+        <FloatingBox
+            hidden={isHidden}
+            onClickOpen={switchIsHidden}
+        >
+            <ProductInfo {...EXAMPLE_PRODUCT}/>
+        </FloatingBox>
     );
 }
 
-const StyledApp = styled(App)`
-    width: 300px;
-    height: 500px;
-`;
-
-export default StyledApp;
+export default App;
