@@ -13,8 +13,4 @@
   "author": "",
   "license": "ISC",
   "homepage": "https://bitbucket.org/szustka/jacked#readme",
-  "devDependencies": {
-    "tslint": "^6.0.0",
-    "typescript": "^3.7.5"
-  }
 }
