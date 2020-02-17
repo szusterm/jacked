@@ -32,13 +32,7 @@ export const shopRecipes: ProductScrapRecipe[] = [
 
         name: $ => $('.sel-product-name').text(),
 
-        image: $ => {
-            const src = $('.image-section figure img').attr('src');
-
-            if (src) {
-                return src.replace('//', '');
-            }
-        },
+        image: $ => $('.image-section figure img').attr('src'),
 
         price: $ => {
             const textPrice = $('.price span').at(0).text();
@@ -61,13 +55,7 @@ export const shopRecipes: ProductScrapRecipe[] = [
 
         name: $ => $('.apphub_AppName').text(),
 
-        image: $ => {
-            const src = $('.game_header_image_full').attr('src');
-
-            if (src) {
-                return src;
-            }
-        },
+        image: $ =>  $('.game_header_image_full').attr('src'),
 
         price: $ => {
             const textPrice = $('.game_purchase_price').text();
