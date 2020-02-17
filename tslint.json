@@ -75,6 +75,7 @@
       "check-type-operator",
       "check-preblock",
       "check-postbrace"
-    ]
+    ],
+    "no-console": false
   }
 }
