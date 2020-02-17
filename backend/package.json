@@ -9,9 +9,11 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^2.10.0",
-    "graphql": "^14.6.0"
+    "graphql": "^14.6.0",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.149",
     "nodemon": "^2.0.2",
     "ts-node": "^8.6.2",
     "tslint": "^6.0.0",

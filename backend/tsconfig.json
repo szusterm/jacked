@@ -1,13 +1,10 @@
 {
   "extends": "../tsconfig",
   "compilerOptions": {
-    "target": "es5",
     "module": "commonjs",
-    "lib": ["es6"],
     "outDir": "dist",
-    "rootDir": "src",
-    "strict": true,
-    "esModuleInterop": true,
+    "rootDir": "../",
+    "jsx": "preserve",
     "forceConsistentCasingInFileNames": true
   }
 }
