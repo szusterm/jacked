@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
+    "strict": true,
     "moduleResolution": "node",
     "noImplicitAny": true,
     "module": "es6",
     "target": "es6",
     "allowJs": true,
     "jsx": "react",
-    "strict": false,
     "allowSyntheticDefaultImports": true
   }
 }

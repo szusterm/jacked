@@ -3,14 +3,14 @@ import {JQueryInit} from './types/JQuery';
 import {Currency} from './Currency';
 
 export class ProductScrapper {
-    private _cachedName: string;
-    private _cachedImage: string;
-    private _cachedPrice: number;
-    private _cachedCurrency: Currency;
+    private _cachedName: string | undefined;
+    private _cachedImage: string | undefined;
+    private _cachedPrice: number | undefined;
+    private _cachedCurrency: Currency | undefined;
 
     constructor(
         private _recipe: ProductScrapRecipe,
-        private _jQuery: JQueryInit
+        private _jQuery: JQueryInit<any>
     ) {
     }
 

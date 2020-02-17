@@ -1,13 +1,13 @@
 import {JQuery, JQueryInit} from '../../../shared/scrapper';
 
-const $: JQueryInit = selector => {
+const $: JQueryInit<any> = selector => {
     const element = new JQueryWeb();
     element.load(selector);
 
     return element;
 };
 
-class JQueryWeb implements JQuery {
+class JQueryWeb implements JQuery<JQueryWeb> {
     constructor(
         private _elements: Element[] = [],
         private _elementId: number = 0
@@ -24,13 +24,21 @@ class JQueryWeb implements JQuery {
 
     attr(name: string) {
         if (this._currentElement) {
-            return this._currentElement.getAttribute(name);
+            const value = this._currentElement.getAttribute(name);
+
+            if (value) {
+                return value;
+            }
         }
     }
 
     text() {
         if (this._currentElement) {
-            return this._currentElement.textContent;
+            const text = this._currentElement.textContent;
+
+            if (text) {
+                return text;
+            }
         }
     }
 

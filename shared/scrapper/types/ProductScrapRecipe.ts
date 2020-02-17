@@ -9,4 +9,4 @@ export interface ProductScrapRecipe {
     currency: ProductFieldReturn<Currency>;
 }
 
-export type ProductFieldReturn<T> = ($: JQueryInit) => T;
+export type ProductFieldReturn<T> = ($: JQueryInit) => (T | undefined);

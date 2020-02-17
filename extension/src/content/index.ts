@@ -11,9 +11,11 @@ const logProduct = (scrapper: ProductScrapper) => {
 const scrapProduct = () => {
     const recipe = findRecipe(location.href, shopRecipes);
 
-    const scrapper = new ProductScrapper(recipe, $);
+    if (recipe) {
+        const scrapper = new ProductScrapper(recipe, $);
 
-    logProduct(scrapper);
+        logProduct(scrapper);
+    }
 };
 
 window.addEventListener('load', () => {

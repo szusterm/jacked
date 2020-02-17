@@ -1,12 +1,6 @@
+import generateFreeDiv from '../utils/generateFreeDiv';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './App';
 
-const rootElement = document.createElement('div');
-
-document.querySelector('body').appendChild(rootElement);
-
-ReactDOM.render(
-    <App/>,
-    rootElement
-);
+ReactDOM.render(<App/>, generateFreeDiv());
