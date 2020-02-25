@@ -1,6 +1,6 @@
-import {JQuery, JQueryInit} from '../../../shared/scrapper';
+import {JQuery, JQueryInit} from './index';
 
-const $: JQueryInit<any> = selector => {
+export const jQueryWeb: JQueryInit = selector => {
     const element = new JQueryWeb();
     element.load(selector);
 
@@ -23,28 +23,22 @@ class JQueryWeb implements JQuery<JQueryWeb> {
     }
 
     attr(name: string) {
-        if (this._currentElement) {
-            const value = this._currentElement.getAttribute(name);
+        const value = this._currentElement?.getAttribute(name);
 
-            if (value) {
-                return value;
-            }
+        if (value) {
+            return value;
         }
     }
 
     text() {
-        if (this._currentElement) {
-            const text = this._currentElement.textContent;
+        const text = this._currentElement?.textContent;
 
-            if (text) {
-                return text;
-            }
+        if (text) {
+            return text;
         }
     }
 
-    private get _currentElement() {
+    private get _currentElement(): Element | undefined {
         return this._elements[this._elementId];
     }
 }
-
-export default $;

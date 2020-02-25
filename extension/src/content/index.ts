@@ -1,25 +1,26 @@
-import ProductScrapper, {findRecipe} from '../../../shared/scrapper';
-import {shopRecipes} from '../../../shared/shopRecipes';
-import $ from './JQueryWeb';
+import {scrapProduct, findRecipe, jQueryWeb, ReadyProduct} from '@shared/scrapper';
+import {shopRecipes} from '@shared/shopRecipes';
 
-const logProduct = (scrapper: ProductScrapper) => {
-    console.log(`name: ${scrapper.name}`);
-    console.log(`image: ${scrapper.image}`);
-    console.log(`price: ${scrapper.price} ${scrapper.currency}`);
+const logProduct = (product: ReadyProduct) => {
+    const {name, image, price, currency} = product;
+
+    console.log(`name: ${name}`);
+    console.log(`image: ${image}`);
+    console.log(`price: ${price} ${currency}`);
 };
 
-const scrapProduct = () => {
+const scrap = () => {
     const recipe = findRecipe(location.href, shopRecipes);
 
     if (recipe) {
-        const scrapper = new ProductScrapper(recipe, $);
+        const product = scrapProduct(recipe, jQueryWeb);
 
-        logProduct(scrapper);
+        logProduct(product);
     }
 };
 
 window.addEventListener('load', () => {
     const TIME_DELAY = 5000;
 
-    setTimeout(scrapProduct, TIME_DELAY);
+    setTimeout(scrap, TIME_DELAY);
 }, false);

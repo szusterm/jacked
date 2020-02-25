@@ -1,4 +1,4 @@
-export type JQueryInit<T extends JQuery<any>> = (selector: string) => T;
+export type JQueryInit = (selector: string) => JQuery<any>;
 
 export interface JQuery<T extends JQuery<any>> {
     at: (index: number) => T;

@@ -1,5 +1,5 @@
-export {ProductScrapRecipe, ProductFieldReturn} from './types/ProductScrapRecipe';
-export {ProductScrapper, ProductScrapper as default} from './ProductScrapper';
-export {JQuery, JQueryInit} from './types/JQuery';
+export {scrapProduct} from './scrapProduct';
+export {Currency} from './types/Currency';
 export {findRecipe} from './findRecipe';
-export {Currency} from './Currency';
+export {jQueryWeb} from './jQueryWeb';
+export * from './types';

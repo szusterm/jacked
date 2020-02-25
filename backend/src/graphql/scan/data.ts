@@ -1,4 +1,4 @@
-import {shopRecipes} from '../../../../shared/shopRecipes';
+import {shopRecipes} from '@shared/shopRecipes';
 import {Site} from './typeDef';
 
 export const availableSites: Site[] = shopRecipes.map(recipe => {

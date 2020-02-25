@@ -1,4 +1,4 @@
-import {Currency} from '../../../../../shared/scrapper';
+import {Currency} from '@shared/scrapper';
 import ProductImage from './ProductImage';
 import ProductName from './ProductName';
 import styled from 'styled-components';

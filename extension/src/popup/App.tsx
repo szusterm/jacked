@@ -1,6 +1,6 @@
 import FloatingBox from './components/FloatingBox';
-import {Currency} from '../../../shared/scrapper';
 import ProductInfo from './pages/ProductInfo';
+import {Currency} from '@shared/scrapper';
 import React, {useState} from 'react';
 
 function App() {
