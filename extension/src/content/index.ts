@@ -1,4 +1,4 @@
-import {scrapProduct, findRecipe, jQueryWeb, ReadyProduct} from '@shared/scrapper';
+import {scrapProduct, findShopRecipe, jQueryWeb, ReadyProduct} from '@shared/scrapper';
 import {shopRecipes} from '@shared/shopRecipes';
 
 const logProduct = (product: ReadyProduct) => {
@@ -10,7 +10,7 @@ const logProduct = (product: ReadyProduct) => {
 };
 
 const scrap = () => {
-    const recipe = findRecipe(location.href, shopRecipes);
+    const recipe = findShopRecipe(location.href, shopRecipes);
 
     if (recipe) {
         const product = scrapProduct(recipe, jQueryWeb);
