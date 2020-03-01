@@ -1,6 +1,6 @@
 import {gql} from 'apollo-server';
 
-export const typeDef = gql`
+const scanTypeDef = gql`
     extend type Query {
         scanProduct(url: String!): Product
         sites: [Site]
@@ -19,6 +19,4 @@ export const typeDef = gql`
     }
 `;
 
-export interface Site {
-    url: string;
-}
+export default scanTypeDef;

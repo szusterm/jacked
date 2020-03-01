@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "nodemon 'src/index.ts' --exec 'ts-node' src/index.ts -e ts,graphql"
+    "start": "nodemon 'src/index.ts' --exec 'ts-node' src/index.ts -e ts,graphql",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "author": "",
   "license": "ISC",
@@ -15,12 +16,16 @@
     "puppeteer": "^2.1.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.12.2",
     "@types/lodash": "^4.14.149",
     "@types/puppeteer": "^2.0.0",
     "nodemon": "^2.0.2",
     "ts-node": "^8.6.2",
     "tslint": "^6.0.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "@graphql-codegen/typescript": "1.12.2",
+    "@graphql-codegen/typescript-resolvers": "1.12.2",
+    "@graphql-codegen/introspection": "1.12.2"
   },
   "_moduleAliases": {
     "@shared": "../shared"

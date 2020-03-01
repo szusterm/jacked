@@ -1,5 +1,6 @@
-import {resolver as scanResolver, typeDef as scanTypeDef} from './graphql/scan';
 import {gql, makeExecutableSchema} from 'apollo-server';
+import {scanResolver} from './resolvers';
+import {scanTypeDef} from './type-defs';
 import {merge} from 'lodash';
 
 const originTypeDef = gql`
